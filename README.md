@@ -83,4 +83,4 @@ The service will return a JSON response with the answer to the query:
 ### Streamlit App
 The Streamlit app provides a user-friendly interface for interacting with the Policy QA Service. You can input your queries and view responses in a chat-like interface.
 
-[![Policy QnA Demo Video]](demo/PolicyQnA.mp4)
+[![Policy QnA Demo Video]](demo/PolicyQA-Streamlit-Demo.mov)
