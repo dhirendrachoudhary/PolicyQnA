@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.1
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.security.http.ssl.enabled=false
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: policy-qa
+    volumes:
+      - ./pdfs:/app/pdfs
+    ports:
+      - "8000:8000"
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_HOST=elasticsearch
+      - ELASTICSEARCH_PORT=9200
+      - OPENAI_API_KEY=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

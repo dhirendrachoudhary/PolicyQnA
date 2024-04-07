@@ -1,0 +1,12 @@
+pypdf
+openai
+# sentence-transformers
+langchain-openai
+tiktoken
+fastapi
+uvicorn
+langchain_community
+langchain_elasticsearch
+langchain
+python-dotenv
+psutil
